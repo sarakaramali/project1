@@ -1,0 +1,409 @@
+@font-face {
+    font-family: 'iransans';
+    src: url('../fonts/iransans/eot/IRANSansWeb.eot?#'),
+    url('../fonts/iransans/woff/IRANSansWeb.woff') format('woff'),
+    url('../fonts/iransans/ttf/IRANSansWeb.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: 'iranyekan';
+    src: url('../fonts/iranyekan/eot/iranyekanwebregular.eot?#'),
+    url('../fonts/iranyekan/woff/iranyekanwebregular.woff') format('woff'),
+    url('../fonts/iranyekan/ttf/iranyekanwebregular.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: 'iranyekan_numbers';
+    src: url('../fonts/iranyekan_numbers/eot/iranyekanwebregular(fanum).eot?#'),
+    url('../fonts/iranyekan_numbers/woff/iranyekanwebregular(fanum).woff') format('woff'),
+    url('../fonts/iranyekan_numbers/ttf/iranyekanwebregular(fanum).ttf') format('truetype')
+}
+
+@font-face {
+    font-family: 'fontawsome';
+    src: url('../fonts/font-awsome/fa-solid-900.eot?#'),
+    url('../fonts/font-awsome/fa-solid-900.woff') format('woff'),
+    url('../fonts/font-awsome/fa-solid-900.ttf') format('truetype')
+}
+
+.fa,
+.fas {
+    font-family: 'fontawsome';
+    font-weight: 900;
+}
+
+body {
+    font-family: iranyekan, iranyekan_numbers;
+    background-color: #d8c1f8;
+}
+
+:root {
+    scroll-behavior: auto;
+    --main-color: #7f00f6;
+    --hover-link: #b48cf3;
+}
+
+/*header*/
+#header {
+    min-height: 350px;
+    background-image: linear-gradient(90deg, rgba(39, 40, 49, .6) 0%, rgba(39, 40, 49, .6) 85%), url("../images/bg-header.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*direction: rtl;*/
+}
+#header .navbar {
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-name: fadeInDown;
+    background: #fff;
+}
+#header .navbar-brand{
+    color: var(--main-color);
+}
+#header .start {
+    background-color: var(--main-color);
+    border: none;
+    outline: 0;
+    box-shadow: none;
+}
+
+#header .more {
+    box-shadow: none;
+}
+
+.navbar-light .navbar-toggler {
+    color: rgb(255 250 250 / 55%);
+    border-color: rgb(255 255 255 / 10%);
+}
+.navbar-light .navbar-toggler-icon {
+     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='black' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+.navbar-light .navbar-toggler {
+    color: rgb(0 0 0 / 55%);
+    border-color: rgb(0 0 0 / 10%);
+}
+.btn-outline-secondary {
+    border-color: rgba(255, 193, 7);
+}
+.navbar-light .navbar-nav .nav-link{
+    color: var(--main-color);
+}
+
+.navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show > .nav-link{
+    /*color: #F8E700FF*/
+    color: var(--main-color);
+}
+
+.navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
+    color: var(--hover-link);
+}
+.btn-outline-dark {
+    border-color: white;
+    outline: white;
+}
+
+.btn-outline-dark:hover {
+    /*color: black;*/
+    background-color: #6c757d;
+}
+
+img#go_top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    cursor: pointer;
+    width: 60px;
+    border-radius: 50%;
+}
+
+
+/*carousel*/
+#my-carousel {
+    width: 100%;
+    padding-top: 30px;
+    /*border: 1px solid red;*/
+    background-color: rgb(232, 229, 229);
+}
+
+#carousel {
+    /*border: 1px solid green;*/
+    width: 80%;
+    margin: 0 auto;
+    min-height: 100px;
+}
+
+#carousel ul {
+    list-style-type: none;
+    /*border: 1px solid blue;*/
+    padding: 0;
+    margin: 0;
+    /*position: relative;*/
+}
+
+#carousel ul::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#carousel ul li {
+    /*float: right;*/
+    /*margin: 8px;*/
+}
+
+#carousel ul li a:link, #carousel ul li a:visited {
+    /*border: 1px solid blue;*/
+    background-color: white;
+    display: block;
+    /*display: flex;*/
+    /*justify-content: flex-start;*/
+    /*padding: 10px;*/
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    margin: 0 5px;
+    border-radius: 0 0 10px 10px;
+    /*box-shadow:4px 9px 7px 4px grey*/
+}
+
+#carousel ul li a span.price {
+    color: #f19e06;
+}
+
+#carousel ul li a img {
+    width: 100%;
+    position: relative;
+}
+
+#carousel ul li a .holder-image .cover {
+    width: 100%;
+    height: 74%;
+    background-color: rgba(232, 229, 229, 0.1);
+    /*#e8e5e5;*/
+    /*rgba(44, 43, 43, 0.1);*/
+    position: absolute;
+    top: 0;
+    color: white;
+    text-align: center;
+    opacity: 1;
+    transition: opacity .5s;
+}
+
+#carousel ul li a .holder-image:hover .cover {
+    opacity: 0;
+}
+
+#carousel ul li a h3 {
+    font-size: 1rem;
+}
+
+i {
+    font-style: normal !important;
+}
+
+.owl-carousel .owl-nav {
+    /*position: absolute;*/
+    /*top: 150px;*/
+    /* right: -64px;*/
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev {
+    /*padding: 7px 15px!important;*/
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--hover-link);
+    color: white;
+
+}
+
+/*text*/
+
+#text {
+    background-color: #2d2d2d;
+    /*direction: rtl;*/
+}
+
+#text p {
+    /*direction: rtl;*/
+    color: #c7c3c3;
+    line-height: 1.5;
+}
+
+.img-content-text {
+    text-align: end;
+}
+
+.footer-content-text {
+    text-align: start;
+}
+
+.footer-content-text h6 {
+    font-size: 12px;
+}
+
+.img-content-text img {
+    border-radius: 50%;
+}
+
+/*veblog*/
+/*مطالب وبلاگ*/
+
+#veblog {
+    min-height: 250px;
+    /*direction: rtl;*/
+    background-color: #e1e1e1;
+}
+
+#veblog .card a {
+    text-decoration: none;
+    color: white;
+    background-color: gray;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.card .btn {
+    /*width: 50px;*/
+    /*height: 20px;*/
+    /*padding: 0;*/
+    border-radius: 20px;
+    /*margin: 5px;*/
+    /*font-size: 12px;*/
+}
+
+.card .card-body .img-content-veblog img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/*countdown*/
+#holder-countdown {
+    background-image: url("../images/bg-countdown.png");
+    min-height: 400px;
+    background-attachment: fixed;
+    background-size: cover;
+    text-align: center;
+    margin: 0 auto;
+    height: 400px;
+}
+
+#holder-countdown h2, #holder-countdown .btn {
+    background-color: var(--main-color);
+    border: none;
+}
+
+#flipdown {
+    margin: 0 auto;
+}
+
+#holder-countdown .btn {
+    border-radius: 10px;
+    margin-top: 100px;
+    background-color: var(--main-color);
+    border: none;
+}
+
+/*اسلایدشو*/
+#slideshow {
+    background-color: #f0eded;
+}
+
+/*چرا ما*/
+
+#holder-option {
+    min-height: 500px;
+    /*direction: rtl;*/
+}
+
+#holder-option p {
+    font-size: 12px;
+}
+
+.option {
+    /*border: 1px solid green;*/
+    min-height: 250px;
+}
+
+/*about us*/
+#about-us {
+    background-color: #f6f2f2;
+    /*direction: rtl;*/
+}
+
+.accordion-button:not(.collapsed), .accordion-button {
+    color: #000000;
+    background-color: #eeeeee;
+    box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%);
+}
+
+.accordion-body {
+    padding: 1rem 1.25rem;
+    border: 1px solid #d3d3d3;
+    border-radius: 0 0 5px 5px;
+}
+
+/*تماس با ما*/
+#tel {
+    background-image: url("../images/background contact us.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 300px;
+}
+
+#tel button {
+    background-color: var(--main-color);
+}
+
+/*اطلاعات تماس*/
+#holder-information-tel {
+    background-size: cover;
+}
+
+#holder-information-tel button[type= 'submit'] {
+    background-color: var(--main-color);
+}
+
+#holder-information-tel input, #holder-information-tel textarea {
+    background-color: var(--main-color);
+    color: white;
+}
+
+#holder-information-tel i {
+    color: var(--main-color);
+}
+
+/*map*/
+.map iframe {
+    width: 100%;
+    height: 400px;
+
+}
+
+/*footer*/
+/*last news*/
+.last-news {
+    background-color: grey;
+    /*min-height: 250px;*/
+    /*direction: rtl;*/
+}
+
+.copy-right {
+    background-color: #4d4d4d;
+    /*direction: rtl;*/
+}
+
+
+.link-copyright a {
+    text-decoration: none;
+    color: white;
+    margin-left: 10px;
+}
